@@ -1,2 +1,2 @@
 # simple-rest-api-java
-Student Rest API With Java
+Simple Rest API With Java
