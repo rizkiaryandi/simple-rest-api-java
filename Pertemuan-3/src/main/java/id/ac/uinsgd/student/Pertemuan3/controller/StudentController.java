@@ -3,16 +3,8 @@ package id.ac.uinsgd.student.Pertemuan3.controller;
 import id.ac.uinsgd.student.Pertemuan3.entity.Student;
 import id.ac.uinsgd.student.Pertemuan3.exception.StudentNotFoundException;
 import id.ac.uinsgd.student.Pertemuan3.service.StudentService;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
@@ -52,7 +44,7 @@ public class StudentController {
         student.setFirstName(newStd.getFirstName());
         student.setLastName(newStd.getLastName());
         student.setEmail(newStd.getEmail());
-        student.setPhone(newStd.getPhone());
+        student.setPhoneNumber(newStd.getPhoneNumber());
         return studentservice.save(student);
     }
 

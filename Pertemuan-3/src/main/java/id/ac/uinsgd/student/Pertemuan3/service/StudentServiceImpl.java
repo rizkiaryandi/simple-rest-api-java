@@ -1,6 +1,5 @@
 package id.ac.uinsgd.student.Pertemuan3.service;
 
-
 import id.ac.uinsgd.student.Pertemuan3.entity.Student;
 import id.ac.uinsgd.student.Pertemuan3.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StudentServiceImpl implements StudentService {
+public class StudentServiceImpl implements StudentService{
     private final StudentRepository studentRepository;
 
     @Autowired

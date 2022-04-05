@@ -4,12 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Data
@@ -19,22 +14,27 @@ import javax.validation.constraints.NotEmpty;
 @Table(name = "student")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotEmpty(message = "First name is required")
-    @Column(nullable = false, name = "firstName")
+    @Column(nullable = false, name = "first_name")
     private String firstName;
 
     @NotEmpty(message = "Last name is required")
-    @Column(nullable = false, name = "lastName")
+    @Column(nullable = false, name = "last_name")
     private String lastName;
 
-    @NotEmpty(message = "email is required")
-    @Column(nullable = false, name = "email", unique = true)
+    @NotEmpty(message = "Email is required")
+    @Column(nullable = true, name = "email", unique = true)
     private String email;
 
     @NotEmpty(message = "Phone number is required")
+    @Column(nullable = true, unique = true)
+    private String phoneNumber;
+
+    @NotEmpty(message = "Jurusan is required")
     @Column(nullable = false, unique = true)
-    private String phone;
+    private String jurusan;
+
 }
